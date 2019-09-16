@@ -1,7 +1,7 @@
 import googlemaps 
 
 # Requires API key 
-gmaps = googlemaps.Client(key='AIzaSyAD-GsYy6W8uOuWjTV4vYHcU4TAWur6lXk') 
+gmaps = googlemaps.Client(key='YOUR-KEY') 
   
 # Solve problems 1 and 2 
 def time_distance(origin, destiny):
