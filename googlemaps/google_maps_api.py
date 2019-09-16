@@ -11,7 +11,7 @@ def time_distance(origin, destiny):
 
 
 
-# Solve porblem 3
+# Solve problem 3
 def check_radius(position1, position2, radius):
     data = gmaps.distance_matrix(position1,position2)['rows'][0]['elements'][0]
     distance_between = data['distance']['text'].split()
