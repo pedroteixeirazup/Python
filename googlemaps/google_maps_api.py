@@ -5,7 +5,7 @@ import pandas as pd
 
 
 # Requires API key 
-gmaps = googlemaps.Client(key='YOUR-KEY') 
+gmaps = googlemaps.Client(key='AIzaSyDTgBrXscEaRfAJh3tBPF2uaP_besCWG8Q') 
   
 # Solve problems 1 and 2 
 def time_distance(origin, destiny):
