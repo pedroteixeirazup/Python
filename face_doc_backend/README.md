@@ -1,4 +1,4 @@
-#This backend is a main instance of a full backend, wich I can't post on git.
+#Esse backend e apenas uma instância de um trabalho maior, o qual não pode ser publicado.
 #zup-mechanical-turk
 Projeto: ZUP Mechanincal Turk
 Objetivo: Treinar um repositório de imagens para a abertura de contas em banco pela web.
