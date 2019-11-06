@@ -106,4 +106,20 @@ def writeXls():
     writer.save()
         
 
-writeXls()
+# writeXls()
+def get_locality(x):
+    address = x['ENDEREÇO'] + ' ' + x['MUNICIPIO'] + ' ' + x['UF']
+    data = dataFinish = gmaps.geocode(address)
+    lat = dataFinish[0]['geometry']['location']['lat']
+    long =  dataFinish[0]['geometry']['location']['lng']
+    return str(round(lat,4)) +'/'+ str(round(long,4))
+
+def siga_bem():
+    file = r'data/siga_bem.xlsx'
+    df = pd.read_excel(file)
+    df['LAT/LNG']= df[['ENDEREÇO','MUNICIPIO','UF']].apply(get_locality,axis=1)
+    writer = ExcelWriter('siga_bem_lat_long.xlsx')
+    df.to_excel(writer,'Sheet1',index=False)
+    writer.save()
+
+siga_bem()

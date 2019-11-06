@@ -4,9 +4,9 @@ from pygame import gfxdraw
 Formas =[]
 Menu = []
 #Start Valeu
-Width = 900
-Heigth = 900
-WindowColor = (255,255,255)
+Width = 600
+Heigth = 600
+WindowColor = (250,250,250)
 Menux = 150
 SetCOLOR = (0,0,0)
 # start config
@@ -93,7 +93,7 @@ def COLORGRID(i,j):
 		if j ==0:
 			return BLACK
 		if j ==1:
-			return (180,180,180)
+			return GRAY#(180,180,180)
 		if j == 2:
 			return White
 		if j == 3:
@@ -103,6 +103,7 @@ def PaintGRID():
 	for i in range(4):
 		for j in range(4):
 			ColorFULL(GRID[0][j],GRID[1][i],GRID[0][j+1],GRID[1][i+1],COLORGRID(i,j))
+
 def criaPainel():
 	global Bottons
 	x = Menux
@@ -195,7 +196,7 @@ def printFormas():
 
 def printMenu():
 	global Menu
-	Colorfill(0,Menux,GRAY)
+	Colorfill(0,Menux,(180, 180, 180))
 	PaintGRID()
 	for i in range(len(Menu)):
 		if Menu[i][0] == 0:
@@ -243,10 +244,6 @@ def midpointCircle(c1,c2,radius,value):
 		
 		Octeto(x,y,c1,c2,value)
 
-
-	
-		
-
 def breseham(x0, y0, x1, y1,value):
 
     dx = x1 - x0
@@ -288,10 +285,6 @@ def breseham(x0, y0, x1, y1,value):
             fraction += dx
             screen.set_at((x0,y0),value)
 
-	
-
-
-	
 def Circle(value):
 		BottonCliked = False
 		global Formas
@@ -625,6 +618,7 @@ def verificaBotao():
 
 criaPainel()
 printMenu()
+
 while 1:
 	for event in pygame.event.get():
 		if event.type == pygame.MOUSEBUTTONUP:
@@ -648,8 +642,6 @@ while 1:
 					SetCOLOR = COLORGRID(b[0],b[1])
 		if event.type == pygame.QUIT:
 			sys.exit()
-
-
 
 while 1:
 	for event in pygame.event.get():
